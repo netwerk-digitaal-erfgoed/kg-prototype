@@ -1,0 +1,16 @@
+PREFIX void: <http://rdfs.org/ns/void#>
+
+# count objects with URI as value
+CONSTRUCT {
+    datasetUri a void:Dataset;
+    void:distinctObjects ?total .
+}
+WHERE {
+  ?grapOpen
+  SELECT (COUNT(?object) as ?total) {
+    ?subject ?property ?object .
+    FILTER(isURI(?object))
+    ?additionalFilter
+  }
+  ?graphClose
+}

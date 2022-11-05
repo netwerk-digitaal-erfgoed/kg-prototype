@@ -1,3 +1,3 @@
 # kg-prototype
 
-Repository for testing queries for analysing datasets and build up the Knowlegde Graph
+Repository for prototyping a pipeline to run bulk analyses on datasets
