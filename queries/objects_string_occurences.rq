@@ -6,12 +6,12 @@ CONSTRUCT {
     void:distinctObjects ?total .
 }
 WHERE {
-  ?grapOpen
+  {{graph-open}}
   SELECT (COUNT(?object) as ?total) {
     ?subject ?property ?object .
     FILTER(!isBlank(?object))
     FILTER(!isUri(?object))
-    ?additionalFilter
+    {{&subject-filter}}
   }
-  ?graphClose
+  {{graph-close}}
 }

@@ -1,6 +1,6 @@
 PREFIX void: <http://rdfs.org/ns/void#>
 
-# list classes and their occurences in the dataset 
+# list classes and their occurences in the dataset
 CONSTRUCT {
     ?datasetUri a void:Dataset;
     void:classPartition [
@@ -9,11 +9,11 @@ CONSTRUCT {
     ] .
 }
 WHERE {
-    ?grapOpen
-    SELECT (COUNT(?property) as ?total) ?property { 
+    {{graph-open}}
+    SELECT (COUNT(?property) as ?total) ?property {
         ?subject ?property ?object
-        ?additionalFilter 
-    } 
+        {{&subject-filter}}
+    }
     GROUP BY ?property
-    ?graphClose
+    {{graph-close}}
 }

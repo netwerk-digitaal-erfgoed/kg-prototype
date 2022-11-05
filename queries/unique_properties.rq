@@ -6,10 +6,10 @@ CONSTRUCT {
     void:properties ?total .
 }
 WHERE {
-  ?grapOpen
-  SELECT( COUNT( DISTINCT ?property ) as ?total ) { 
-    ?subject ?property ?object 
-    ?additionalFilter 
+  {{graph-open}}
+  SELECT( COUNT( DISTINCT ?property ) as ?total ) {
+    ?subject ?property ?object
+    {{&subject-filter}}
   }
-  ?grapClose
+  {{graph-close}}
 }
