@@ -1,4 +1,5 @@
 import Debug from 'debug';
+import Handlebars from 'handlebars';
 import {QueryEngine} from '@comunica/query-sparql';
 import {BindingsFactory} from '@comunica/bindings-factory';
 import {DataFactory} from 'rdf-data-factory';
@@ -10,6 +11,8 @@ import rdfSerializer from 'rdf-serialize';
 
 export interface RunOptions {
   datasetUri: string;
+  graphUri?: string;
+  subjectFilter?: string;
   endpointUrl: string;
   queryFile: string;
 }
@@ -21,12 +24,30 @@ export class SparqlEndpointAnalyzer {
     this.debug = Debug(`app:${this.constructor.name}`);
   }
 
-  async run(options: RunOptions): Promise<void> {
+  async loadQueryFromFile(options: RunOptions): Promise<string> {
     const queryFile = resolve(options.queryFile);
-    const query = await readFile(queryFile, {encoding: 'utf-8'});
+    const data = await readFile(queryFile, {encoding: 'utf-8'});
+    const template = Handlebars.compile(data);
+    const templateData: Record<string, string> = {};
+
+    if (options.graphUri) {
+      templateData['graph-open'] = 'GRAPH ?graphUri {';
+      templateData['graph-close'] = '}';
+    }
+
+    if (options.subjectFilter) {
+      templateData['subject-filter'] = options.subjectFilter;
+    }
+
+    const query = template(templateData);
+    return query;
+  }
+
+  async run(options: RunOptions): Promise<void> {
+    const query = await this.loadQueryFromFile(options);
 
     this.debug(
-      `Querying dataset "${options.datasetUri}" in "${options.endpointUrl}" using query file "${queryFile}"`
+      `Querying dataset "${options.datasetUri}" in "${options.endpointUrl}" using query file "${options.queryFile}"`
     );
 
     const DF = new DataFactory();
@@ -40,9 +61,10 @@ export class SparqlEndpointAnalyzer {
           value: options.endpointUrl,
         },
       ],
-      httpTimeout: 10_000, // 10 seconds
+      httpTimeout: 60_000,
       initialBindings: BF.fromRecord({
         datasetUri: DF.namedNode(options.datasetUri),
+        graphUri: DF.namedNode(options.graphUri!), // Can be undefined
       }) as unknown as Bindings,
     });
 
@@ -52,7 +74,7 @@ export class SparqlEndpointAnalyzer {
     await pipeline(textStream, process.stdout);
 
     this.debug(
-      `Done analyzing dataset "${options.datasetUri}" in "${options.endpointUrl}" using query file "${queryFile}"`
+      `Done analyzing dataset "${options.datasetUri}" in "${options.endpointUrl}" using query file "${options.queryFile}"`
     );
   }
 }

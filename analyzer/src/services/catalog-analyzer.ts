@@ -31,12 +31,16 @@ export class CatalogAnalyzer {
   async getEndpointsFromCatalog(catalog: RDF.Store): Promise<RDF.Bindings[]> {
     const query = `
       PREFIX dcat: <http://www.w3.org/ns/dcat#>
+      PREFIX nde: <https://www.netwerkdigitaalerfgoed.nl/def#>
       PREFIX schema: <https://schema.org/>
-      SELECT ?datasetUri ?endpointUrl
+
+      SELECT ?datasetUri ?endpointUrl ?graphUri ?subjectFilter
       WHERE {
         ?datasetUri a dcat:Dataset ;
           dcat:distribution ?distribution .
-        ?distribution dcat:accessURL ?endpointUrl
+        ?distribution dcat:accessURL ?endpointUrl .
+        OPTIONAL { ?distribution nde:graphUri ?graphUri }
+        OPTIONAL { ?distribution nde:subjectFilter ?subjectFilter }
       }
     `;
 
@@ -57,9 +61,23 @@ export class CatalogAnalyzer {
       const datasetUri = endpoint.get('datasetUri')!.value.toString();
       const endpointUrl = endpoint.get('endpointUrl')!.value.toString();
 
+      let graphUri = undefined;
+      const graphUriTerm = endpoint.get('graphUri');
+      if (graphUriTerm !== undefined) {
+        graphUri = graphUriTerm.value.toString();
+      }
+
+      let subjectFilter = undefined;
+      const subjectFilterTerm = endpoint.get('subjectFilter');
+      if (subjectFilterTerm !== undefined) {
+        subjectFilter = subjectFilterTerm.value.toString();
+      }
+
       try {
         await new SparqlEndpointAnalyzer().run({
           datasetUri,
+          graphUri,
+          subjectFilter,
           endpointUrl,
           queryFile: options.queryFile,
         });
