@@ -112,7 +112,9 @@ PREFIX schema: <https://schema.org>
 	dcat:accessURL <https://LIT.hosting.deventit.net/AtlantisSparql> ;
 	schema:workExample "SELECT * WHERE { GRAPH <file://hosting.deventit.net/lit/nosync/Opendata/LOD/RDF/LOD%20Persoon%20en%20Organisatie.rdf> { ?s ?p ?o } }" ].
 
-<https://data.netwerkdigitaalerfgoed.nl/hackalod/gvn/kit<https://api.data.netwerkdigitaalerfgoed.nl/datasets/HackaLOD/GVN/services/GVN/sparql" ;
+<https://data.netwerkdigitaalerfgoed.nl/hackalod/gvn/kit> a dcat:Dataset ;
+	dcat:distribution [
+	dcat:accessURL <https://api.data.netwerkdigitaalerfgoed.nl/datasets/HackaLOD/GVN/services/GVN/sparql" ;
 	schema:workExample "SELECT * WHERE { ?s ?p ? o }" ].
 
 <https://data.netwerkdigitaalerfgoed.nl/hackalod/gvn/kitlv> a dcat:Dataset ;
@@ -120,7 +122,9 @@ PREFIX schema: <https://schema.org>
 	dcat:accessURL <https://api.data.netwerkdigitaalerfgoed.nl/datasets/HackaLOD/GVN/services/GVN/sparql> ;
 	schema:workExample "SELECT * WHERE { ?s ?p ? o }" ].
 
-<https://data.netwerkdigitaalerfgoed.nl/hackalod/gvn/pkl<https://api.data.netwerkdigitaalerfgoed.nl/datasets/HackaLOD/GVN/services/GVN/sparql" ;
+<https://data.netwerkdigitaalerfgoed.nl/hackalod/gvn/pkl> a dcat:Dataset ;
+	dcat:distribution [
+	dcat:accessURL <https://api.data.netwerkdigitaalerfgoed.nl/datasets/HackaLOD/GVN/services/GVN/sparql" ;
 	schema:workExample "SELECT * WHERE { ?s ?p ? o }" ].
 
 <https://druid.datalegend.net/IISG/iisg-kg> a dcat:Dataset ;
@@ -161,7 +165,9 @@ PREFIX schema: <https://schema.org>
 	dcat:accessURL <https://api.labs.kadaster.nl/datasets/kadaster/bgt/services/bgt/sparql> ;
 	schema:workExample "SELECT * WHERE { ?s ?p ? o }" ].
 
-<https://data.labs.kadaster.nl/kadaster/brt-<https://api.labs.kadaster.nl/datasets/kadaster/brt-2/services/brt/sparql" ;
+<https://data.labs.kadaster.nl/kadaster/brt-2> a dcat:Dataset ;
+	dcat:distribution [
+	dcat:accessURL <https://api.labs.kadaster.nl/datasets/kadaster/brt-2/services/brt/sparql" ;
 	schema:workExample "SELECT * WHERE { ?s ?p ? o }" ].
 
 <https://data.labs.kadaster.nl/kadaster/kg> a dcat:Dataset ;
