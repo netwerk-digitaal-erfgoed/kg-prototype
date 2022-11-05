@@ -20,6 +20,7 @@
     "@oclif/core": "1.x.x",
     "@oclif/plugin-help": "5.x.x",
     "debug": "4.x.x",
+    "fetch-sparql-endpoint": "3.1.0",
     "handlebars": "4.7.7",
     "rdf-data-factory": "1.x.x",
     "rdf-parse": "2.1.0",

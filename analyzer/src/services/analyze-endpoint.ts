@@ -1,6 +1,6 @@
 import Debug from 'debug';
+import {SparqlEndpointFetcher} from "fetch-sparql-endpoint";
 import Handlebars from 'handlebars';
-import {QueryEngine} from '@comunica/query-sparql';
 import {readFile} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import rdfSerializer from 'rdf-serialize';
@@ -49,17 +49,8 @@ export class SparqlEndpointAnalyzer {
       `Querying dataset "${options.datasetUri}" in "${options.endpointUrl}"`
     );
 
-    const engine = new QueryEngine();
-    const quadStream = await engine.queryQuads(query, {
-      sources: [
-        {
-          type: 'sparql',
-          value: options.endpointUrl,
-        },
-      ],
-      httpTimeout: 60_000,
-    });
-
+    const fetcher = new SparqlEndpointFetcher();
+    const quadStream = await fetcher.fetchTriples(options.endpointUrl, query);
     const textStream = rdfSerializer.serialize(quadStream, {
       contentType: 'application/n-triples',
     });
