@@ -140,9 +140,9 @@ PREFIX nde: <https://www.netwerkdigitaalerfgoed.nl/def#>
 	dcat:distribution [
 	dcat:accessURL <https://api.druid.datalegend.net/datasets/AdamNet/Heritage/services/Heritage/sparql> ] .
 
-<https://data.labs.kadaster.nl/kadaster/bag> a dcat:Dataset ;
+<https://data.labs.kadaster.nl/kadaster/bag/lv> a dcat:Dataset ;
 	dcat:distribution [
-	dcat:accessURL <https://api.labs.kadaster.nl/datasets/kadaster/bag2/services/default/sparql> ] .
+	dcat:accessURL <https://data.labs.kadaster.nl/bag/lv/sparql/default> ] .
 
 <https://data.labs.kadaster.nl/kadaster/bgt> a dcat:Dataset ;
 	dcat:distribution [
