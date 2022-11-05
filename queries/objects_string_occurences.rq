@@ -2,7 +2,7 @@ PREFIX void: <http://rdfs.org/ns/void#>
 
 # count objects with no blank node or URI as value
 CONSTRUCT {
-    datasetUri a void:Dataset;
+    ?datasetUri a void:Dataset;
     void:distinctObjects ?total .
 }
 WHERE {

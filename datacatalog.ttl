@@ -9,25 +9,25 @@ PREFIX nde: <https://www.netwerkdigitaalerfgoed.nl/def#>
 	dcat:distribution [
 	dcat:accessURL <http://data.muziekschatten.nl/sparql> ] .
 
-<https://klek.si/datasets/thorn/default> a dcat:Dataset ;
-	dcat:distribution [
-	dcat:accessURL <https://api.kleksi.com/apps/thorn/datasets/default/sparql> ] .
+# <https://klek.si/datasets/thorn/default> a dcat:Dataset ;
+# 	dcat:distribution [
+# 	dcat:accessURL <https://api.kleksi.com/apps/thorn/datasets/default/sparql> ] .
 
 <https://www.goudatijdmachine.nl/data/api/items/> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <https://www.goudatijdmachine.nl/sparql/repositories/gouda-bs> ] .
 
-<http://data.beeldengeluid.nl/id/dataset/> a dcat:Dataset ;
-	dcat:distribution [
-	dcat:accessURL <https://cat.apis.beeldengeluid.nl/sparql> ] .
+# <http://data.beeldengeluid.nl/id/dataset/> a dcat:Dataset ;
+# 	dcat:distribution [
+# 	dcat:accessURL <https://cat.apis.beeldengeluid.nl/sparql> ] .
 
-<http://data.beeldengeluid.nl/id/dataset/> a dcat:Dataset ;
-	dcat:distribution [
-	dcat:accessURL <https://gtaa.apis.beeldengeluid.nl/sparql> ] .
+# <http://data.beeldengeluid.nl/id/dataset/> a dcat:Dataset ;
+# 	dcat:distribution [
+# 	dcat:accessURL <https://gtaa.apis.beeldengeluid.nl/sparql> ] .
 
-<http://data.beeldengeluid.nl/id/dataset/> a dcat:Dataset ;
-	dcat:distribution [
-	dcat:accessURL <https://api.data.muziekweb.nl/datasets/MuziekwebOrganization/Muziekweb/services/Muziekweb/sparql> ] .
+# <http://data.beeldengeluid.nl/id/dataset/> a dcat:Dataset ;
+# 	dcat:distribution [
+# 	dcat:accessURL <https://api.data.muziekweb.nl/datasets/MuziekwebOrganization/Muziekweb/services/Muziekweb/sparql> ] .
 
 <https://lod.uba.uva.nl/UB-UVA/Incunabula/> a dcat:Dataset ;
 	dcat:distribution [

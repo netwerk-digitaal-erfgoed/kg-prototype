@@ -25,3 +25,7 @@
 #### Example
 
     ./analyzer/bin/dev analyze-catalog --catalogFile "./datacatalog.ttl" --queryFile "./queries/class_occurences.rq"
+    ./analyzer/bin/dev analyze-catalog --catalogFile "./datacatalog.ttl" --queryFile "./queries/objects_string_occurences.rq"
+    ./analyzer/bin/dev analyze-catalog --catalogFile "./datacatalog.ttl" --queryFile "./queries/objects_uris_occurences.rq"
+    ./analyzer/bin/dev analyze-catalog --catalogFile "./datacatalog.ttl" --queryFile "./queries/property_occurences.rq"
+    ./analyzer/bin/dev analyze-catalog --catalogFile "./datacatalog.ttl" --queryFile "./queries/unique_properties.rq"
