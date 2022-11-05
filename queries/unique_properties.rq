@@ -2,14 +2,14 @@ PREFIX void: <http://rdfs.org/ns/void#>
 
 # count unique properties
 CONSTRUCT {
-    ?datasetUri a void:Dataset;
+    {{&dataset-uri}} a void:Dataset;
     void:properties ?total .
 }
 WHERE {
-  {{graph-open}}
+  {{&graph-open}}
   SELECT( COUNT( DISTINCT ?property ) as ?total ) {
     ?subject ?property ?object
     {{&subject-filter}}
   }
-  {{graph-close}}
+  {{&graph-close}}
 }

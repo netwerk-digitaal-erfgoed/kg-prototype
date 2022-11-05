@@ -2,15 +2,15 @@ PREFIX void: <http://rdfs.org/ns/void#>
 
 # count objects with URI as value
 CONSTRUCT {
-    ?datasetUri a void:Dataset;
+    {{&dataset-uri}} a void:Dataset;
     void:distinctObjects ?total .
 }
 WHERE {
-  {{graph-open}}
+  {{&graph-open}}
   SELECT (COUNT(?object) as ?total) {
     ?subject ?property ?object .
     FILTER(isURI(?object))
     {{&subject-filter}}
   }
-  {{graph-close}}
+  {{&graph-close}}
 }
