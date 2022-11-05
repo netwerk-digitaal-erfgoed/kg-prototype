@@ -22,4 +22,4 @@
 
 #### Example
 
-    ./analyzer/bin/dev analyze-catalog --catalogFile "./analyzer/catalog.json" --queryFile "./queries/class_occurences.rq"
+    ./analyzer/bin/dev analyze-catalog --catalogFile "./datacatalog.ttl" --queryFile "./queries/class_occurences.rq"

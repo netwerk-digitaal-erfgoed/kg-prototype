@@ -40,6 +40,7 @@ export class SparqlEndpointAnalyzer {
           value: options.endpointUrl,
         },
       ],
+      httpTimeout: 10_000, // 10 seconds
       initialBindings: BF.fromRecord({
         datasetUri: DF.namedNode(options.datasetUri),
       }) as unknown as Bindings,
