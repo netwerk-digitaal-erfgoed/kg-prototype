@@ -12,6 +12,14 @@ export class AnalyzeEndpointCommand extends Command {
       description: 'IRI of the dataset',
       required: true,
     }),
+    graphUri: Flags.string({
+      description: 'IRI of the graph',
+      required: false,
+    }),
+    subjectFilter: Flags.string({
+      description: 'Triples to filter the subject by',
+      required: false,
+    }),
     endpointUrl: Flags.string({
       description: 'URL of the SPARQL endpoint',
       required: true,
@@ -24,10 +32,12 @@ export class AnalyzeEndpointCommand extends Command {
 
   async run(): Promise<void> {
     const {flags} = await this.parse(AnalyzeEndpointCommand);
-    const {datasetUri, endpointUrl, queryFile} = flags;
+    const {datasetUri, graphUri, subjectFilter, endpointUrl, queryFile} = flags;
 
     await new SparqlEndpointAnalyzer().run({
       datasetUri,
+      graphUri,
+      subjectFilter,
       endpointUrl,
       queryFile,
     });
