@@ -3,8 +3,8 @@ import Handlebars from 'handlebars';
 import {QueryEngine} from '@comunica/query-sparql';
 import {readFile} from 'node:fs/promises';
 import {resolve} from 'node:path';
-import {pipeline} from 'node:stream/promises';
 import rdfSerializer from 'rdf-serialize';
+import stringifyStream from 'stream-to-string';
 
 export interface RunOptions {
   datasetUri: string;
@@ -46,7 +46,7 @@ export class SparqlEndpointAnalyzer {
     const query = await this.loadQueryFromFile(options);
 
     this.debug(
-      `Querying dataset "${options.datasetUri}" in "${options.endpointUrl}" using query "${query}"`
+      `Querying dataset "${options.datasetUri}" in "${options.endpointUrl}"`
     );
 
     const engine = new QueryEngine();
@@ -63,10 +63,7 @@ export class SparqlEndpointAnalyzer {
     const textStream = rdfSerializer.serialize(quadStream, {
       contentType: 'application/n-triples',
     });
-    await pipeline(textStream, process.stdout);
-
-    this.debug(
-      `Done analyzing dataset "${options.datasetUri}" in "${options.endpointUrl}"`
-    );
+    const triples = await stringifyStream(textStream);
+    process.stdout.write(triples);
   }
 }
