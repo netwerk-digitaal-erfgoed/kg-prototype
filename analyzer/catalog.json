@@ -1,0 +1,16 @@
+{
+  "endpoints": [
+    {
+      "datasetUri": "https://www.goudatijdmachine.nl/data/api/items/51791",
+      "endpointUrl": "https://www.goudatijdmachine.nl/sparql/repositories/gouda-bs"
+    },
+    {
+      "datasetUri": "http://data.muziekschatten.nl/",
+      "endpointUrl": "http://data.muziekschatten.nl/sparql"
+    },
+    {
+      "datasetUri": "https://data.netwerkdigitaalerfgoed.nl/Rijksmuseum/collection",
+      "endpointUrl": "https://api.data.netwerkdigitaalerfgoed.nl/datasets/Rijksmuseum/collection/services/collection/sparql"
+    }
+  ]
+}
