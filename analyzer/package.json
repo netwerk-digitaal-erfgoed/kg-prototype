@@ -1,0 +1,48 @@
+{
+  "name": "kg-prototype",
+  "description": "Knowledge Graph: a prototype",
+  "version": "1.0.0",
+  "bin": {
+    "run": "./bin/run"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "private": true,
+  "files": [
+    "bin",
+    "build"
+  ],
+  "dependencies": {
+    "@comunica/query-sparql": "2.4.3",
+    "@comunica/bindings-factory": "2.2.0",
+    "@oclif/core": "1.x.x",
+    "@oclif/plugin-help": "5.x.x",
+    "debug": "4.x.x",
+    "rdf-data-factory": "1.x.x",
+    "rdf-serialize": "2.x.x"
+  },
+  "devDependencies": {
+    "@rdfjs/types": "1.1.0",
+    "@types/debug": "4.x.x",
+    "@types/node": "16.x.x",
+    "globby": "11.x.x",
+    "gts": "3.x.x",
+    "ts-node-dev": "2.x.x",
+    "typescript": "4.x.x"
+  },
+  "scripts": {
+    "check": "gts check",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix"
+  },
+  "oclif": {
+    "bin": "run",
+    "dirname": "run",
+    "commands": "./build/src/commands",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  }
+}
