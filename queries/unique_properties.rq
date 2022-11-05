@@ -1,0 +1,15 @@
+PREFIX void: <http://rdfs.org/ns/void#>
+
+# count unique properties
+CONSTRUCT {
+    datasetUri a void:Dataset;
+    void:properties ?total .
+}
+WHERE {
+  ?grapOpen
+  SELECT( COUNT( DISTINCT ?property ) as ?total ) { 
+    ?subject ?property ?object 
+    ?additionalFilter 
+  }
+  ?grapClose
+}
