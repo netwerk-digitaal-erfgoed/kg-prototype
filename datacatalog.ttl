@@ -15,7 +15,7 @@ PREFIX nde: <https://www.netwerkdigitaalerfgoed.nl/def#>
 
 <https://www.goudatijdmachine.nl/data/api/items/> a dcat:Dataset ;
 	dcat:distribution [
-	dcat:accessURL <https://www.goudatijdmachine.nl/sparql/repositories/gouda-bs> ] .
+	dcat:accessURL <https://www.goudatijdmachine.nl/sparql/repositories/gtm> ] .
 
 # <http://data.beeldengeluid.nl/id/dataset/> a dcat:Dataset ;
 # 	dcat:distribution [
