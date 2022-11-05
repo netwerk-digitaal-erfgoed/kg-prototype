@@ -73,8 +73,9 @@ export class CatalogAnalyzer {
         subjectFilter = subjectFilterTerm.value.toString();
       }
 
+      const sparqlEndpointAnalyzer = new SparqlEndpointAnalyzer();
       try {
-        await new SparqlEndpointAnalyzer().run({
+        await sparqlEndpointAnalyzer.run({
           datasetUri,
           graphUri,
           subjectFilter,

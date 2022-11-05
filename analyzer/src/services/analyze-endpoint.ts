@@ -50,7 +50,6 @@ export class SparqlEndpointAnalyzer {
     );
 
     const engine = new QueryEngine();
-
     const quadStream = await engine.queryQuads(query, {
       sources: [
         {
