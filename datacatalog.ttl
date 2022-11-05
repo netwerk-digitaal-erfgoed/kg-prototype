@@ -1,261 +1,231 @@
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX schema: <https://schema.org>
+PREFIX nde: <https://www.netwerkdigitaalerfgoed.nl/def#>
 
+# nde:graphUri
+# nde:subjectFilter
 
 <http://data.muziekschatten.nl/> a dcat:Dataset ;
 	dcat:distribution [
-	dcat:accessURL <http://data.muziekschatten.nl/sparql> ;
-	schema:workExample "SELECT * WHERE { ?s ?p ? o }" ].
+	dcat:accessURL <http://data.muziekschatten.nl/sparql> ] .
 
 <https://klek.si/datasets/thorn/default> a dcat:Dataset ;
 	dcat:distribution [
-	dcat:accessURL <https://api.kleksi.com/apps/thorn/datasets/default/sparql> ;
-	schema:workExample "SELECT * WHERE { ?s ?p ? o }" ].
+	dcat:accessURL <https://api.kleksi.com/apps/thorn/datasets/default/sparql> ] .
 
 <https://www.goudatijdmachine.nl/data/api/items/> a dcat:Dataset ;
 	dcat:distribution [
-	dcat:accessURL <https://www.goudatijdmachine.nl/sparql/repositories/gouda-bs> ;
-	schema:workExample "SELECT * WHERE { ?s ?p ? o }" ].
+	dcat:accessURL <https://www.goudatijdmachine.nl/sparql/repositories/gouda-bs> ] .
 
 <http://data.beeldengeluid.nl/id/dataset/> a dcat:Dataset ;
 	dcat:distribution [
-	dcat:accessURL <https://cat.apis.beeldengeluid.nl/sparql> ;
-	schema:workExample "SELECT * WHERE { ?s ?p ? o }" ].
+	dcat:accessURL <https://cat.apis.beeldengeluid.nl/sparql> ] .
 
 <http://data.beeldengeluid.nl/id/dataset/> a dcat:Dataset ;
 	dcat:distribution [
-	dcat:accessURL <https://gtaa.apis.beeldengeluid.nl/sparql> ;
-	schema:workExample "SELECT * WHERE { ?s ?p ? o }" ].
+	dcat:accessURL <https://gtaa.apis.beeldengeluid.nl/sparql> ] .
 
 <http://data.beeldengeluid.nl/id/dataset/> a dcat:Dataset ;
 	dcat:distribution [
-	dcat:accessURL <https://api.data.muziekweb.nl/datasets/MuziekwebOrganization/Muziekweb/services/Muziekweb/sparql> ;
-	schema:workExample "SELECT * WHERE { ?s ?p ? o }" ].
+	dcat:accessURL <https://api.data.muziekweb.nl/datasets/MuziekwebOrganization/Muziekweb/services/Muziekweb/sparql> ] .
 
 <https://lod.uba.uva.nl/UB-UVA/Incunabula/> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <https://api.lod.uba.uva.nl/datasets/UB-UVA/Catalogue/services/virtuoso/sparql> ;
-	schema:workExample "SELECT * WHERE { GRAPH <https://lod.uba.uva.nl/UB-UVA/Incunabula/graphs/default> { ?s ?p ?o } }" ].
+	nde:graphUri <https://lod.uba.uva.nl/UB-UVA/Incunabula/graphs/default> ] .
 
 <https://lod.uba.uva.nl/UB-UVA/Letters/> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <https://api.lod.uba.uva.nl/datasets/UB-UVA/Catalogue/services/virtuoso/sparql> ;
-	schema:workExample "SELECT * WHERE { GRAPH <https://lod.uba.uva.nl/UB-UVA/Letters/graphs/default> { ?s ?p ?o } }" ].
+	nde:graphUri <https://lod.uba.uva.nl/UB-UVA/Letters/graphs/default> ] .
 
 <https://lod.uba.uva.nl/UB-UVA/Maps/> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <https://api.lod.uba.uva.nl/datasets/UB-UVA/Catalogue/services/virtuoso/sparql> ;
-	schema:workExample "SELECT * WHERE { GRAPH <https://lod.uba.uva.nl/UB-UVA/Maps/graphs/default> { ?s ?p ?o } }" ].
+	nde:graphUri <https://lod.uba.uva.nl/UB-UVA/Maps/graphs/default> ] .
 
 <https://lod.uba.uva.nl/UB-UVA/Images/> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <https://api.lod.uba.uva.nl/datasets/UB-UVA/Catalogue/services/virtuoso/sparql> ;
-	schema:workExample "SELECT * WHERE { GRAPH <https://lod.uba.uva.nl/UB-UVA/Images/graphs/default> { ?s ?p ?o } }" ].
+	nde:graphUri <https://lod.uba.uva.nl/UB-UVA/Images/graphs/default> ] .
 
 <https://lod.uba.uva.nl/UB-UVA/Video/> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <https://api.lod.uba.uva.nl/datasets/UB-UVA/Catalogue/services/virtuoso/sparql> ;
-	schema:workExample "SELECT * WHERE { GRAPH <https://lod.uba.uva.nl/UB-UVA/Video/graphs/default> { ?s ?p ?o } }" ].
+	nde:graphUri <https://lod.uba.uva.nl/UB-UVA/Video/graphs/default> ] .
 
 <https://lod.uba.uva.nl/UB-UVA/Audio/> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <https://api.lod.uba.uva.nl/datasets/UB-UVA/Catalogue/services/virtuoso/sparql> ;
-	schema:workExample "SELECT * WHERE { GRAPH <https://lod.uba.uva.nl/UB-UVA/Audio/graphs/default> { ?s ?p ?o } }" ].
+	nde:graphUri <https://lod.uba.uva.nl/UB-UVA/Audio/graphs/default> ] .
 
 <https://lod.uba.uva.nl/UB-UVA/Music/> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <https://api.lod.uba.uva.nl/datasets/UB-UVA/Catalogue/services/virtuoso/sparql> ;
-	schema:workExample "SELECT * WHERE { GRAPH <https://lod.uba.uva.nl/UB-UVA/Music/graphs/default> { ?s ?p ?o } }" ].
+	nde:graphUri <https://lod.uba.uva.nl/UB-UVA/Music/graphs/default> ] .
 
 <https://lod.uba.uva.nl/UB-UVA/Archaeological-Objects/> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <https://api.lod.uba.uva.nl/datasets/UB-UVA/Catalogue/services/virtuoso/sparql> ;
-	schema:workExample "SELECT * WHERE { GRAPH <https://lod.uba.uva.nl/UB-UVA/Archaeological-Objects/graphs/default> { ?s ?p ?o } }" ].
+	nde:graphUri <https://lod.uba.uva.nl/UB-UVA/Archaeological-Objects/graphs/default> ] .
 
 <https://lod.uba.uva.nl/UB-UVA/Objects/> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <https://api.lod.uba.uva.nl/datasets/UB-UVA/Catalogue/services/virtuoso/sparql> ;
-	schema:workExample "SELECT * WHERE { GRAPH <https://lod.uba.uva.nl/UB-UVA/Objects/graphs/default> { ?s ?p ?o } }" ].
-
-<https://lod.uba.uva.nl/UB-UVA/Beeldbank/> a dcat:Dataset ;
-	dcat:distribution [
-	dcat:accessURL <https://lod.uba.uva.nl/UB-UVA/Beeldbank/sparql/> ;
-	schema:workExample "" ].
+	nde:graphUri <https://lod.uba.uva.nl/UB-UVA/Objects/graphs/default> ] .
 
 <https://LIT.hosting.deventit.net/AtlantisPubliek/data/dataset/LOD+Archiefbeschrijvingen> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <https://LIT.hosting.deventit.net/AtlantisSparql> ;
-	schema:workExample "SELECT * WHERE { GRAPH <file://hosting.deventit.net/lit/nosync/Opendata/LOD/RDF/catalog.rdf> { ?s ?p ?o } }" ].
+	nde:graphUri <file://hosting.deventit.net/lit/nosync/Opendata/LOD/RDF/catalog.rdf> ] .
 
 <https://LIT.hosting.deventit.net/AtlantisPubliek/data/dataset/LOD+Museale+Objecten> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <https://LIT.hosting.deventit.net/AtlantisSparql> ;
-	schema:workExample "SELECT * WHERE { GRAPH <file://hosting.deventit.net/lit/nosync/Opendata/LOD/RDF/LOD%20Museale%20Objecten.rdf> { ?s ?p ?o } }" ].
+	nde:graphUri <file://hosting.deventit.net/lit/nosync/Opendata/LOD/RDF/LOD%20Museale%20Objecten.rdf> ] .
 
 <https://LIT.hosting.deventit.net/AtlantisPubliek/data/dataset/LOD+Thesaurus> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <https://LIT.hosting.deventit.net/AtlantisSparql> ;
-	schema:workExample "SELECT * WHERE { GRAPH <file://hosting.deventit.net/lit/nosync/Opendata/LOD/RDF/LOD%20Thesaurus.rdf> { ?s ?p ?o } }" ].
+	nde:graphUri <file://hosting.deventit.net/lit/nosync/Opendata/LOD/RDF/LOD%20Thesaurus.rdf> ] .
 
 <https://LIT.hosting.deventit.net/AtlantisPubliek/data/dataset/LOD+Stambestanden> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <https://LIT.hosting.deventit.net/AtlantisSparql> ;
-	schema:workExample "SELECT * WHERE { GRAPH <file://hosting.deventit.net/lit/nosync/Opendata/LOD/RDF/LOD%20Stambestanden.rdf> { ?s ?p ?o } }" ].
+	nde:graphUri <file://hosting.deventit.net/lit/nosync/Opendata/LOD/RDF/LOD%20Stambestanden.rdf> ] .
 
 <https://LIT.hosting.deventit.net/AtlantisPubliek/data/dataset/LOD+Archieven> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <https://LIT.hosting.deventit.net/AtlantisSparql> ;
-	schema:workExample "SELECT * WHERE { GRAPH <file://hosting.deventit.net/lit/nosync/Opendata/LOD/RDF/LOD%20Archieven.rdf> { ?s ?p ?o } }" ].
+	nde:graphUri <file://hosting.deventit.net/lit/nosync/Opendata/LOD/RDF/LOD%20Archieven.rdf> ] .
 
 <https://LIT.hosting.deventit.net/AtlantisPubliek/data/dataset/LOD+Persoon+en+Organisatie> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <https://LIT.hosting.deventit.net/AtlantisSparql> ;
-	schema:workExample "SELECT * WHERE { GRAPH <file://hosting.deventit.net/lit/nosync/Opendata/LOD/RDF/LOD%20Persoon%20en%20Organisatie.rdf> { ?s ?p ?o } }" ].
+	nde:graphUri <file://hosting.deventit.net/lit/nosync/Opendata/LOD/RDF/LOD%20Persoon%20en%20Organisatie.rdf> ] .
 
 <https://data.netwerkdigitaalerfgoed.nl/hackalod/gvn/kit> a dcat:Dataset ;
 	dcat:distribution [
-	dcat:accessURL <https://api.data.netwerkdigitaalerfgoed.nl/datasets/HackaLOD/GVN/services/GVN/sparql" ;
-	schema:workExample "SELECT * WHERE { ?s ?p ? o }" ].
+	dcat:accessURL <https://api.data.netwerkdigitaalerfgoed.nl/datasets/HackaLOD/GVN/services/GVN/sparql> ] .
 
 <https://data.netwerkdigitaalerfgoed.nl/hackalod/gvn/kitlv> a dcat:Dataset ;
 	dcat:distribution [
-	dcat:accessURL <https://api.data.netwerkdigitaalerfgoed.nl/datasets/HackaLOD/GVN/services/GVN/sparql> ;
-	schema:workExample "SELECT * WHERE { ?s ?p ? o }" ].
+	dcat:accessURL <https://api.data.netwerkdigitaalerfgoed.nl/datasets/HackaLOD/GVN/services/GVN/sparql> ] .
 
 <https://data.netwerkdigitaalerfgoed.nl/hackalod/gvn/pkl> a dcat:Dataset ;
 	dcat:distribution [
-	dcat:accessURL <https://api.data.netwerkdigitaalerfgoed.nl/datasets/HackaLOD/GVN/services/GVN/sparql" ;
-	schema:workExample "SELECT * WHERE { ?s ?p ? o }" ].
+	dcat:accessURL <https://api.data.netwerkdigitaalerfgoed.nl/datasets/HackaLOD/GVN/services/GVN/sparql> ] .
 
 <https://druid.datalegend.net/IISG/iisg-kg> a dcat:Dataset ;
 	dcat:distribution [
-	dcat:accessURL <https://api.druid.datalegend.net/datasets/IISG/iisg-kg/services/iisg-kg/sparql> ;
-	schema:workExample "SELECT * WHERE { ?s ?p ? o }" ].
+	dcat:accessURL <https://api.druid.datalegend.net/datasets/IISG/iisg-kg/services/iisg-kg/sparql> ] .
 
 <https://druid.datalegend.net/nlgis/gemeentegeschiedenis> a dcat:Dataset ;
 	dcat:distribution [
-	dcat:accessURL <https://api.druid.datalegend.net/datasets/nlgis/gemeentegeschiedenis/services/gemeentegeschiedenis/sparql> ;
-	schema:workExample "SELECT * WHERE { ?s ?p ? o }" ].
+	dcat:accessURL <https://api.druid.datalegend.net/datasets/nlgis/gemeentegeschiedenis/services/gemeentegeschiedenis/sparql> ] .
 
 <https://digitaalerfgoed.poolparty.biz/PoolParty/wiki/term/id/cht> a dcat:Dataset ;
 	dcat:distribution [
-	dcat:accessURL <https://digitaalerfgoed.poolparty.biz/PoolParty/sparql/term/id/cht> ;
-	schema:workExample "SELECT * WHERE { ?s ?p ? o }" ].
+	dcat:accessURL <https://digitaalerfgoed.poolparty.biz/PoolParty/sparql/term/id/cht> ] .
 
 <https://data.netwerkdigitaalerfgoed.nl/Rijksmuseum/collection> a dcat:Dataset ;
 	dcat:distribution [
-	dcat:accessURL <https://api.data.netwerkdigitaalerfgoed.nl/datasets/Rijksmuseum/collection/services/collection/sparql> ;
-	schema:workExample "SELECT * WHERE { ?s ?p ? o }" ].
+	dcat:accessURL <https://api.data.netwerkdigitaalerfgoed.nl/datasets/Rijksmuseum/collection/services/collection/sparql> ] .
 
 <https://druid.datalegend.net/dataLegend/HDNG> a dcat:Dataset ;
 	dcat:distribution [
-	dcat:accessURL <https://api.druid.datalegend.net/datasets/dataLegend/HDNG/services/hdng/sparql> ;
-	schema:workExample "SELECT * WHERE { ?s ?p ? o }" ].
+	dcat:accessURL <https://api.druid.datalegend.net/datasets/dataLegend/HDNG/services/hdng/sparql> ] .
 
 <https://druid.datalegend.net/AdamNet/Heritage/> a dcat:Dataset ;
 	dcat:distribution [
-	dcat:accessURL <https://api.druid.datalegend.net/datasets/AdamNet/Heritage/services/Heritage/sparql> ;
-	schema:workExample "SELECT * WHERE { ?s ?p ? o }" ].
+	dcat:accessURL <https://api.druid.datalegend.net/datasets/AdamNet/Heritage/services/Heritage/sparql> ] .
 
-<https://data.labs.kadaster.nl/kadaster/bag<https://api.labs.kadaster.nl/datasets/kadaster/bag2/services/default/sparql" ;
-	schema:workExample "SELECT * WHERE { ?s ?p ? o }" ].
+<https://data.labs.kadaster.nl/kadaster/bag> a dcat:Dataset ;
+	dcat:distribution [
+	dcat:accessURL <https://api.labs.kadaster.nl/datasets/kadaster/bag2/services/default/sparql> ] .
 
 <https://data.labs.kadaster.nl/kadaster/bgt> a dcat:Dataset ;
 	dcat:distribution [
-	dcat:accessURL <https://api.labs.kadaster.nl/datasets/kadaster/bgt/services/bgt/sparql> ;
-	schema:workExample "SELECT * WHERE { ?s ?p ? o }" ].
+	dcat:accessURL <https://api.labs.kadaster.nl/datasets/kadaster/bgt/services/bgt/sparql> ] .
 
 <https://data.labs.kadaster.nl/kadaster/brt-2> a dcat:Dataset ;
 	dcat:distribution [
-	dcat:accessURL <https://api.labs.kadaster.nl/datasets/kadaster/brt-2/services/brt/sparql" ;
-	schema:workExample "SELECT * WHERE { ?s ?p ? o }" ].
+	dcat:accessURL <https://api.labs.kadaster.nl/datasets/kadaster/brt-2/services/brt/sparql> ] .
 
 <https://data.labs.kadaster.nl/kadaster/kg> a dcat:Dataset ;
 	dcat:distribution [
-	dcat:accessURL <https://api.labs.kadaster.nl/datasets/kadaster/kg/services/default/sparql> ;
-	schema:workExample "SELECT * WHERE { ?s ?p ? o }" ].
+	dcat:accessURL <https://api.labs.kadaster.nl/datasets/kadaster/kg/services/default/sparql> ] .
 
 <https://data.labs.kadaster.nl/kadaster/wbk> a dcat:Dataset ;
 	dcat:distribution [
-	dcat:accessURL <https://api.labs.kadaster.nl/datasets/kadaster/wbk/services/cbs-linkset/sparql> ;
-	schema:workExample "SELECT * WHERE { ?s ?p ? o }" ].
+	dcat:accessURL <https://api.labs.kadaster.nl/datasets/kadaster/wbk/services/cbs-linkset/sparql> ] .
 
 <http://data.bibliotheken.nl/id/dataset/dbnla> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <http://data.bibliotheken.nl/sparql> ;
-	schema:workExample "select * where { ?s schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/dbnla> . }" ].
+	nde:subjectFilter "?s schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/dbnla>" ].
 
 <http://data.bibliotheken.nl/id/dataset/dbnlt> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <http://data.bibliotheken.nl/sparql> ;
-	schema:workExample "select * where { ?s schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/dbnlt> . }" ].
+	nde:subjectFilter "?s schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/dbnlt>" ].
 
 <http://data.bibliotheken.nl/id/dataset/gtt> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <http://data.bibliotheken.nl/sparql> ;
-	schema:workExample "select * where { ?s schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/gtt> . }" ].
+	nde:subjectFilter "?s schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/gtt>" ].
 
 <http://data.bibliotheken.nl/id/dataset/kbcode> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <http://data.bibliotheken.nl/sparql> ;
-	schema:workExample "select * where { ?s schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/kbcode> . }" ].
+	nde:subjectFilter "?s schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/kbcode>" ].
 
 <http://data.bibliotheken.nl/id/dataset/nbt> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <http://data.bibliotheken.nl/sparql> ;
-	schema:workExample "select * where { ?s schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/nbt> . }" ].
+	nde:subjectFilter "?s schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/nbt>" ].
 
 <http://data.bibliotheken.nl/id/dataset/persons> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <http://data.bibliotheken.nl/sparql> ;
-	schema:workExample "select * where { ?s schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/persons> . }" ].
+	nde:subjectFilter "?s schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/persons>" ].
 
 <http://data.bibliotheken.nl/id/dataset/rise-centsprenten> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <http://data.bibliotheken.nl/sparql> ;
-	schema:workExample "select * where { ?s schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/rise-centsprenten> . }" ].
+	nde:subjectFilter "?s schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/rise-centsprenten>" ].
 
 <http://data.bibliotheken.nl/id/dataset/stcn> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <http://data.bibliotheken.nl/sparql> ;
-	schema:workExample "select * where { ?s schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/stcn> . }" ].
+	nde:subjectFilter "?s schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/stcn>" ].
 
 <http://data.bibliotheken.nl/id/dataset/brinkman> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <http://data.bibliotheken.nl/sparql> ;
-	schema:workExample "select * where { ?s schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/brinkman> . }" ].
+	nde:subjectFilter "?s schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/brinkman>" ].
 
 <http://data.bibliotheken.nl/id/dataset/corps> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <http://data.bibliotheken.nl/sparql> ;
-	schema:workExample "select * where { ?s schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/corps> . }" ].
-
-<http://www.wikidata.org/entity/Q106908720> a dcat:Dataset ;
-	dcat:distribution [
-	dcat:accessURL <https://query.wikidata.org/sparql?query=SELECT%20%2a%0AWHERE%20%0A%7B%0A%20%20wd%3AQ106908720%20%3Fp%20%3Fo.%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cnl%22.%20%7D%0A%7D> ;
-	schema:workExample "" ].
+	nde:subjectFilter "?s schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/corps>" ].
 
 <https://data.niod.nl/PoolParty/wiki/WO2_Thesaurus> a dcat:Dataset ;
 	dcat:distribution [
-	dcat:accessURL <https://data.niod.nl/PoolParty/sparql/WO2_Thesaurus> ;
-	schema:workExample "SELECT * WHERE { ?s ?p ? o }" ].
+	dcat:accessURL <https://data.niod.nl/PoolParty/sparql/WO2_Thesaurus> ].
 
 <https://linkeddata.cultureelerfgoed.nl/> a dcat:Dataset ;
 	dcat:distribution [
-	dcat:accessURL <https://linkeddata.cultureelerfgoed.nl/sparql> ;
-	schema:workExample "SELECT * WHERE { ?s ?p ? o }" ].
+	dcat:accessURL <https://linkeddata.cultureelerfgoed.nl/sparql> ].
 
 <https://data.netwerkdigitaalerfgoed.nl/hackalod/gvn/ubl> a dcat:Dataset ;
 	dcat:distribution [
-	dcat:accessURL <https://api.data.netwerkdigitaalerfgoed.nl/datasets/HackaLOD/GVN/services/GVN/sparql> ;
-	schema:workExample "SELECT * WHERE { ?s ?p ? o }" ].
+	dcat:accessURL <https://api.data.netwerkdigitaalerfgoed.nl/datasets/HackaLOD/GVN/services/GVN/sparql> ].
 
 <https://data.netwerkdigitaalerfgoed.nl/NMVW/collectie> a dcat:Dataset ;
 	dcat:distribution [
-	dcat:accessURL <https://api.data.netwerkdigitaalerfgoed.nl/datasets/NMVW/thesaurus/services/thesaurus/sparql> ;
-	schema:workExample "SELECT * WHERE { ?s ?p ? o }" ].
+	dcat:accessURL <https://api.data.netwerkdigitaalerfgoed.nl/datasets/NMVW/thesaurus/services/thesaurus/sparql> ].
 
 <https://data.netwerkdigitaalerfgoed.nl/hetutrechtsarchief/Dataset> a dcat:Dataset ;
 	dcat:distribution [
-	dcat:accessURL <https://api.data.netwerkdigitaalerfgoed.nl/datasets/hetutrechtsarchief/Dataset/services/Dataset/sparql> ;
-	schema:workExample "SELECT * WHERE { ?s ?p ? o }" ].
+	dcat:accessURL <https://api.data.netwerkdigitaalerfgoed.nl/datasets/hetutrechtsarchief/Dataset/services/Dataset/sparql> ].
