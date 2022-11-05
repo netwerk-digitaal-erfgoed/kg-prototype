@@ -14,13 +14,16 @@
     "build"
   ],
   "dependencies": {
-    "@comunica/query-sparql": "2.4.3",
     "@comunica/bindings-factory": "2.2.0",
+    "@comunica/query-sparql": "2.4.3",
+    "@comunica/query-sparql-rdfjs": "2.4.3",
     "@oclif/core": "1.x.x",
     "@oclif/plugin-help": "5.x.x",
     "debug": "4.x.x",
     "rdf-data-factory": "1.x.x",
-    "rdf-serialize": "2.x.x"
+    "rdf-parse": "2.1.0",
+    "rdf-serialize": "2.x.x",
+    "rdf-store-stream": "1.x.x"
   },
   "devDependencies": {
     "@rdfjs/types": "1.1.0",
