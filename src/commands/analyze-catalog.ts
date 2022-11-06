@@ -19,7 +19,7 @@ export class AnalyzeCatalogCommand extends Command {
     timeout: Flags.integer({
       description: 'SPARQL endpoint timeout in seconds',
       required: false,
-      default: 30
+      default: 30,
     }),
   };
 

@@ -22,6 +22,7 @@ export class CatalogAnalyzer {
 
   async loadCatalogfromFile(file: string): Promise<RDF.Store> {
     this.debug(`Loading catalog from "${file}"`);
+
     const quadStream = rdfParser.parse(fs.createReadStream(file), {
       path: file,
     });
@@ -58,6 +59,10 @@ export class CatalogAnalyzer {
     const catalog = await this.loadCatalogfromFile(catalogFile);
     const endpoints = await this.getEndpointsFromCatalog(catalog);
 
+    this.debug(
+      `Analyzing ${endpoints.length} endpoints in catalog "${catalogFile}"`
+    );
+
     for (const endpoint of endpoints) {
       const datasetUri = endpoint.get('datasetUri')!.value.toString();
       const endpointUrl = endpoint.get('endpointUrl')!.value.toString();
@@ -81,7 +86,7 @@ export class CatalogAnalyzer {
         subjectFilter,
         endpointUrl,
         queryFile: options.queryFile,
-        timeout: options.timeout
+        timeout: options.timeout,
       });
     }
   }

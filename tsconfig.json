@@ -5,8 +5,7 @@
     "rootDir": ".",
     "outDir": "build",
     "skipLibCheck": true,
-    "esModuleInterop": true,
-    "typeRoots": ["./src/types"]
+    "esModuleInterop": true
   },
   "include": ["src/**/*.ts"]
 }

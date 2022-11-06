@@ -30,13 +30,20 @@ export class AnalyzeEndpointCommand extends Command {
     }),
     timeout: Flags.integer({
       description: 'SPARQL endpoint timeout in seconds',
-      required: false
+      required: false,
     }),
   };
 
   async run(): Promise<void> {
     const {flags} = await this.parse(AnalyzeEndpointCommand);
-    const {datasetUri, graphUri, subjectFilter, endpointUrl, queryFile, timeout} = flags;
+    const {
+      datasetUri,
+      graphUri,
+      subjectFilter,
+      endpointUrl,
+      queryFile,
+      timeout,
+    } = flags;
 
     await new SparqlEndpointAnalyzer().run({
       datasetUri,
@@ -44,7 +51,7 @@ export class AnalyzeEndpointCommand extends Command {
       subjectFilter,
       endpointUrl,
       queryFile,
-      timeout
+      timeout,
     });
   }
 }

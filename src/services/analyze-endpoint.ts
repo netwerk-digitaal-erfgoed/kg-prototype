@@ -55,8 +55,14 @@ export class SparqlEndpointAnalyzer {
     const fetcher = new SparqlEndpointFetcher();
 
     try {
-      const unresolvedQuadstream = fetcher.fetchTriples(options.endpointUrl, query);
-      const quadStream = await pTimeout(unresolvedQuadstream, timeoutInSeconds * 1000); // Timeout as milliseconds
+      const unresolvedQuadstream = fetcher.fetchTriples(
+        options.endpointUrl,
+        query
+      );
+      const quadStream = await pTimeout(
+        unresolvedQuadstream,
+        timeoutInSeconds * 1000
+      ); // Timeout as milliseconds
       const textStream = rdfSerializer.serialize(quadStream, {
         contentType: 'application/n-triples',
       });
