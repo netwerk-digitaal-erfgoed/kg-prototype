@@ -163,52 +163,52 @@ PREFIX nde: <https://www.netwerkdigitaalerfgoed.nl/def#>
 <http://data.bibliotheken.nl/id/dataset/dbnla> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <http://data.bibliotheken.nl/sparql> ;
-	nde:subjectFilter "?s schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/dbnla>" ].
+	nde:subjectFilter "?subject schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/dbnla> ." ].
 
 <http://data.bibliotheken.nl/id/dataset/dbnlt> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <http://data.bibliotheken.nl/sparql> ;
-	nde:subjectFilter "?s schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/dbnlt>" ].
+	nde:subjectFilter "?subject schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/dbnlt>" ].
 
 <http://data.bibliotheken.nl/id/dataset/gtt> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <http://data.bibliotheken.nl/sparql> ;
-	nde:subjectFilter "?s schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/gtt>" ].
+	nde:subjectFilter "?subject schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/gtt>" ].
 
 <http://data.bibliotheken.nl/id/dataset/kbcode> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <http://data.bibliotheken.nl/sparql> ;
-	nde:subjectFilter "?s schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/kbcode>" ].
+	nde:subjectFilter "?subject schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/kbcode>" ].
 
 <http://data.bibliotheken.nl/id/dataset/nbt> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <http://data.bibliotheken.nl/sparql> ;
-	nde:subjectFilter "?s schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/nbt>" ].
+	nde:subjectFilter "{SELECT ?subject {?subject schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/nbt>} LIMIT 1000000}" ].
 
 <http://data.bibliotheken.nl/id/dataset/persons> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <http://data.bibliotheken.nl/sparql> ;
-	nde:subjectFilter "?s schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/persons>" ].
+	nde:subjectFilter "?subject schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/persons>" ].
 
 <http://data.bibliotheken.nl/id/dataset/rise-centsprenten> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <http://data.bibliotheken.nl/sparql> ;
-	nde:subjectFilter "?s schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/rise-centsprenten>" ].
+	nde:subjectFilter "?subject schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/rise-centsprenten>" ].
 
 <http://data.bibliotheken.nl/id/dataset/stcn> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <http://data.bibliotheken.nl/sparql> ;
-	nde:subjectFilter "?s schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/stcn>" ].
+	nde:subjectFilter "?subject schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/stcn>" ].
 
 <http://data.bibliotheken.nl/id/dataset/brinkman> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <http://data.bibliotheken.nl/sparql> ;
-	nde:subjectFilter "?s schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/brinkman>" ].
+	nde:subjectFilter "?subject schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/brinkman>" ].
 
 <http://data.bibliotheken.nl/id/dataset/corps> a dcat:Dataset ;
 	dcat:distribution [
 	dcat:accessURL <http://data.bibliotheken.nl/sparql> ;
-	nde:subjectFilter "?s schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/corps>" ].
+	nde:subjectFilter "?subject schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/corps>" ].
 
 <https://data.niod.nl/PoolParty/wiki/WO2_Thesaurus> a dcat:Dataset ;
 	dcat:distribution [
