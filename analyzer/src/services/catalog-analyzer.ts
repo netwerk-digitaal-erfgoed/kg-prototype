@@ -10,13 +10,14 @@ import {QueryEngine} from '@comunica/query-sparql-rdfjs';
 export interface RunOptions {
   catalogFile: string;
   queryFile: string;
+  timeout?: number; // In seconds
 }
 
 export class CatalogAnalyzer {
   protected debug: Debug.IDebugger;
 
   constructor() {
-    this.debug = Debug(`app:${this.constructor.name}`);
+    this.debug = Debug('kg:catalog');
   }
 
   async loadCatalogfromFile(file: string): Promise<RDF.Store> {
@@ -74,20 +75,14 @@ export class CatalogAnalyzer {
       }
 
       const sparqlEndpointAnalyzer = new SparqlEndpointAnalyzer();
-      try {
-        await sparqlEndpointAnalyzer.run({
-          datasetUri,
-          graphUri,
-          subjectFilter,
-          endpointUrl,
-          queryFile: options.queryFile,
-        });
-      } catch (err) {
-        const error = err as Error;
-        this.debug(
-          `Failed to analyze SPARQL endpoint "${endpointUrl}": ${error.message}`
-        );
-      }
+      await sparqlEndpointAnalyzer.run({
+        datasetUri,
+        graphUri,
+        subjectFilter,
+        endpointUrl,
+        queryFile: options.queryFile,
+        timeout: options.timeout
+      });
     }
   }
 }

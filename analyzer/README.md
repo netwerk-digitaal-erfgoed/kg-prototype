@@ -14,13 +14,17 @@
 
 ### Analyze data in a SPARQL endpoint
 
-#### Example
+#### Examples
 
     ./analyzer/bin/dev analyze-endpoint --datasetUri "http://data.muziekschatten.nl/" --endpointUrl "http://data.muziekschatten.nl/sparql" --queryFile "./queries/class_occurences.rq"
 
     ./analyzer/bin/dev analyze-endpoint --datasetUri "https://lod.uba.uva.nl/UB-UVA/Incunabula/" --endpointUrl "https://api.lod.uba.uva.nl/datasets/UB-UVA/Catalogue/services/virtuoso/sparql" --graphUri "https://lod.uba.uva.nl/UB-UVA/Incunabula/graphs/default" --queryFile "./queries/class_occurences.rq"
 
+    ./analyzer/bin/dev analyze-endpoint --datasetUri "http://data.bibliotheken.nl/id/dataset/dbnla" --endpointUrl "http://data.bibliotheken.nl/sparql" --subjectFilter "?s schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/dbnla>" --queryFile "./queries/class_occurences.rq"
+
 ### Analyze data in all SPARQL endpoints in the catalog
+
+Beware: this could take some time.
 
 #### Example
 

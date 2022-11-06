@@ -2,7 +2,7 @@ import {Command, Flags} from '@oclif/core';
 import {SparqlEndpointAnalyzer} from '../services/analyze-endpoint';
 import * as Debug from 'debug';
 
-Debug.enable('app:*');
+Debug.enable('kg:*');
 
 export class AnalyzeEndpointCommand extends Command {
   static description = 'Analyze a SPARQL endpoint';
@@ -28,11 +28,15 @@ export class AnalyzeEndpointCommand extends Command {
       description: 'File with a SPARQL query',
       required: true,
     }),
+    timeout: Flags.integer({
+      description: 'SPARQL endpoint timeout in seconds',
+      required: false
+    }),
   };
 
   async run(): Promise<void> {
     const {flags} = await this.parse(AnalyzeEndpointCommand);
-    const {datasetUri, graphUri, subjectFilter, endpointUrl, queryFile} = flags;
+    const {datasetUri, graphUri, subjectFilter, endpointUrl, queryFile, timeout} = flags;
 
     await new SparqlEndpointAnalyzer().run({
       datasetUri,
@@ -40,6 +44,7 @@ export class AnalyzeEndpointCommand extends Command {
       subjectFilter,
       endpointUrl,
       queryFile,
+      timeout
     });
   }
 }
