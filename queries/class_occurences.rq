@@ -1,19 +1,22 @@
 PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 # list classes and their occurences in the dataset
 CONSTRUCT {
     {{&dataset-uri}} a void:Dataset;
     void:classPartition [
-        void:class ?type;
+        rdfs:label ?label ;
+        void:class ?type ;
         void:entities ?total
     ] .
 }
 WHERE {
     {{&graph-open}}
-    SELECT (COUNT(?type) as ?total) ?type {
+    SELECT (COUNT(?type) as ?total) ?type ?label {
         ?subject a ?type .
+        BIND(CONCAT("totals for class ",STR(?type)) as ?label)
         {{&subject-filter}}
     }
-    GROUP BY ?type
+    GROUP BY ?type ?label
     {{&graph-close}}
 }
