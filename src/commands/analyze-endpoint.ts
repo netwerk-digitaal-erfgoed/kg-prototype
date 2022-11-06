@@ -1,5 +1,6 @@
 import {Command, Flags} from '@oclif/core';
 import {SparqlEndpointAnalyzer} from '../services/analyze-endpoint';
+import {QueryLoader} from '../services/query-loader';
 import * as Debug from 'debug';
 
 Debug.enable('kg:*');
@@ -45,7 +46,11 @@ export class AnalyzeEndpointCommand extends Command {
       timeout,
     } = flags;
 
-    await new SparqlEndpointAnalyzer().run({
+    const queryLoader = new QueryLoader();
+    const sparqlEndpointAnalyzer = new SparqlEndpointAnalyzer();
+
+    await sparqlEndpointAnalyzer.run({
+      queryLoader,
       datasetUri,
       graphUri,
       subjectFilter,

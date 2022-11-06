@@ -2,6 +2,7 @@ import fs from 'fs';
 import Debug from 'debug';
 import {resolve} from 'node:path';
 import {SparqlEndpointAnalyzer} from '../services/analyze-endpoint';
+import {QueryLoader} from '../services/query-loader';
 import rdfParser from 'rdf-parse';
 import {storeStream} from 'rdf-store-stream';
 import * as RDF from '@rdfjs/types';
@@ -55,6 +56,7 @@ export class CatalogAnalyzer {
   }
 
   async run(options: RunOptions): Promise<void> {
+    const queryLoader = new QueryLoader();
     const catalogFile = resolve(options.catalogFile);
     const catalog = await this.loadCatalogfromFile(catalogFile);
     const endpoints = await this.getEndpointsFromCatalog(catalog);
@@ -81,6 +83,7 @@ export class CatalogAnalyzer {
 
       const sparqlEndpointAnalyzer = new SparqlEndpointAnalyzer();
       await sparqlEndpointAnalyzer.run({
+        queryLoader,
         datasetUri,
         graphUri,
         subjectFilter,
