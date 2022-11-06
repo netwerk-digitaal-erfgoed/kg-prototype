@@ -19,7 +19,7 @@ export class SparqlEndpointAnalyzer {
   protected debug: Debug.IDebugger;
 
   constructor() {
-    this.debug = Debug('kg:analyzer');
+    this.debug = Debug('kg:endpoint-analyzer');
   }
 
   async run(options: RunOptions): Promise<void> {

@@ -6,11 +6,11 @@ CONSTRUCT {
     void:distinctObjects ?total .
 }
 WHERE {
-  {{&graph-open}}
-  SELECT (COUNT(?object) as ?total) {
-    ?subject ?property ?object .
-    FILTER(isURI(?object))
-    {{&subject-filter}}
-  }
-  {{&graph-close}}
+    {{&graph-open}}
+    SELECT (COUNT(?object) as ?total) {
+        ?subject ?property ?object .
+        FILTER(isURI(?object))
+        {{&subject-filter}}
+    }
+    {{&graph-close}}
 }

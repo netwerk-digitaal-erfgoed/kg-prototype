@@ -31,19 +31,19 @@ Logging goes to `stderr`, results to `stdout`.
 
     bin/dev analyze-endpoint --datasetUri "https://lod.uba.uva.nl/UB-UVA/Incunabula/" --endpointUrl "https://api.lod.uba.uva.nl/datasets/UB-UVA/Catalogue/services/virtuoso/sparql" --graphUri "https://lod.uba.uva.nl/UB-UVA/Incunabula/graphs/default" --queryFile "queries/class_occurences.rq"
 
-    bin/dev analyze-endpoint --datasetUri "http://data.bibliotheken.nl/id/dataset/dbnla" --endpointUrl "http://data.bibliotheken.nl/sparql" --subjectFilter "?s schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/dbnla>" --queryFile "queries/class_occurences.rq" --timeout 180
+    bin/dev analyze-endpoint --datasetUri "http://data.bibliotheken.nl/id/dataset/dbnla" --endpointUrl "http://data.bibliotheken.nl/sparql" --subjectFilter "?subject schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/dbnla>" --queryFile "queries/class_occurences.rq" --timeout 180
 
-### Analyze data in all SPARQL endpoints in a catalog
+### Analyze data in all SPARQL endpoints from a catalog
 
 Beware: this could take some time.
 
-    bin/dev analyze-catalog --catalogFile {file} --queryFile {file}
-    bin/dev analyze-catalog --catalogFile {file} --queryFile {file} --timeout {seconds}
+    bin/dev analyze-endpoints --catalogFile {file} --queryFile {file}
+    bin/dev analyze-endpoints --catalogFile {file} --queryFile {file} --timeout {seconds}
 
 #### Examples
 
-    bin/dev analyze-catalog --catalogFile "catalogs/sparql-endpoints.ttl" --queryFile "queries/class_occurences.rq"
-    bin/dev analyze-catalog --catalogFile "catalogs/sparql-endpoints.ttl" --queryFile "queries/objects_string_occurences.rq"
-    bin/dev analyze-catalog --catalogFile "catalogs/sparql-endpoints.ttl" --queryFile "queries/objects_uris_occurences.rq"
-    bin/dev analyze-catalog --catalogFile "catalogs/sparql-endpoints.ttl" --queryFile "queries/property_occurences.rq"
-    bin/dev analyze-catalog --catalogFile "catalogs/sparql-endpoints.ttl" --queryFile "queries/unique_properties.rq"
+    bin/dev analyze-endpoints --catalogFile "catalogs/sparql-endpoints.ttl" --queryFile "queries/class_occurences.rq"
+    bin/dev analyze-endpoints --catalogFile "catalogs/sparql-endpoints.ttl" --queryFile "queries/objects_string_occurences.rq"
+    bin/dev analyze-endpoints --catalogFile "catalogs/sparql-endpoints.ttl" --queryFile "queries/objects_uris_occurences.rq"
+    bin/dev analyze-endpoints --catalogFile "catalogs/sparql-endpoints.ttl" --queryFile "queries/property_occurences.rq"
+    bin/dev analyze-endpoints --catalogFile "catalogs/sparql-endpoints.ttl" --queryFile "queries/unique_properties.rq"

@@ -14,7 +14,7 @@ WHERE {
     {{&graph-open}}
     SELECT (COUNT(?type) as ?total) ?type ?label {
         ?subject a ?type .
-        BIND(CONCAT("totals for class ",STR(?type)) as ?label)
+        BIND(CONCAT("totals for class ", STR(?type)) as ?label)
         {{&subject-filter}}
     }
     GROUP BY ?type ?label

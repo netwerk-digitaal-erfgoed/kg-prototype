@@ -1,5 +1,5 @@
 import {Command, Flags} from '@oclif/core';
-import {SparqlEndpointAnalyzer} from '../services/analyze-endpoint';
+import {SparqlEndpointAnalyzer} from '../services/endpoint-analyzer';
 import {QueryLoader} from '../services/query-loader';
 import * as Debug from 'debug';
 
@@ -26,7 +26,7 @@ export class AnalyzeEndpointCommand extends Command {
       required: true,
     }),
     queryFile: Flags.string({
-      description: 'File with a SPARQL query',
+      description: 'File with a SPARQL CONSTRUCT query',
       required: true,
     }),
     timeout: Flags.integer({

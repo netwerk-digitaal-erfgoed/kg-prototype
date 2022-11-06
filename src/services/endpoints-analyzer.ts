@@ -1,7 +1,7 @@
 import Debug from 'debug';
 import fs from 'node:fs';
 import {resolve} from 'node:path';
-import {SparqlEndpointAnalyzer} from '../services/analyze-endpoint';
+import {SparqlEndpointAnalyzer} from '../services/endpoint-analyzer';
 import {QueryLoader} from '../services/query-loader';
 import rdfParser from 'rdf-parse';
 import {storeStream} from 'rdf-store-stream';
@@ -14,14 +14,14 @@ export interface RunOptions {
   timeout?: number; // In seconds
 }
 
-export class CatalogAnalyzer {
+export class SparqlEndpointsAnalyzer {
   protected debug: Debug.IDebugger;
 
   constructor() {
-    this.debug = Debug('kg:catalog');
+    this.debug = Debug('kg:endpoints-analyzer');
   }
 
-  async loadCatalogfromFile(file: string): Promise<RDF.Store> {
+  protected async loadCatalogFromFile(file: string): Promise<RDF.Store> {
     this.debug(`Loading catalog from "${file}"`);
     const quadStream = rdfParser.parse(fs.createReadStream(file), {
       path: file,
@@ -29,7 +29,9 @@ export class CatalogAnalyzer {
     return storeStream(quadStream);
   }
 
-  async getEndpointsFromCatalog(catalog: RDF.Store): Promise<RDF.Bindings[]> {
+  protected async getEndpointsFromCatalog(
+    catalog: RDF.Store
+  ): Promise<RDF.Bindings[]> {
     const query = `
       PREFIX dcat: <http://www.w3.org/ns/dcat#>
       PREFIX nde: <https://www.netwerkdigitaalerfgoed.nl/def#>
@@ -56,7 +58,7 @@ export class CatalogAnalyzer {
   async run(options: RunOptions): Promise<void> {
     const queryLoader = new QueryLoader();
     const catalogFile = resolve(options.catalogFile);
-    const catalog = await this.loadCatalogfromFile(catalogFile);
+    const catalog = await this.loadCatalogFromFile(catalogFile);
     const endpoints = await this.getEndpointsFromCatalog(catalog);
 
     this.debug(
