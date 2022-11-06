@@ -1,5 +1,5 @@
-import fs from 'fs';
 import Debug from 'debug';
+import fs from 'node:fs';
 import {resolve} from 'node:path';
 import {SparqlEndpointAnalyzer} from '../services/analyze-endpoint';
 import {QueryLoader} from '../services/query-loader';
@@ -23,11 +23,9 @@ export class CatalogAnalyzer {
 
   async loadCatalogfromFile(file: string): Promise<RDF.Store> {
     this.debug(`Loading catalog from "${file}"`);
-
     const quadStream = rdfParser.parse(fs.createReadStream(file), {
       path: file,
     });
-
     return storeStream(quadStream);
   }
 
@@ -65,6 +63,7 @@ export class CatalogAnalyzer {
       `Analyzing ${endpoints.length} endpoints in catalog "${catalogFile}"`
     );
 
+    // TBD: run in parallel?
     for (const endpoint of endpoints) {
       const datasetUri = endpoint.get('datasetUri')!.value.toString();
       const endpointUrl = endpoint.get('endpointUrl')!.value.toString();
