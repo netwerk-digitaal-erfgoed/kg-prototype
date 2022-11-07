@@ -11,7 +11,7 @@ CONSTRUCT {
 WHERE {
     {{&graph-open}}
     SELECT (COUNT(?property) as ?total) ?property {
-        ?subject ?property ?object
+        ?subject ?property ?object .
         {{&subject-filter}}
     }
     GROUP BY ?property
