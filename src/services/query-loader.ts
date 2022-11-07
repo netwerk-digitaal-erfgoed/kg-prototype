@@ -10,9 +10,12 @@ export interface LoadOptions {
   subjectFilter?: string;
 }
 
-type ToQueryOptions = {
+interface ToQueryOptions {
   compiledQueryTemplate: HandlebarsTemplateDelegate;
-} & Pick<LoadOptions, 'datasetUri' | 'graphUri' | 'subjectFilter'>;
+  datasetUri: string;
+  graphUri?: string;
+  subjectFilter?: string;
+}
 
 export class QueryLoader {
   protected debug: Debug.IDebugger;
