@@ -1,9 +1,9 @@
 import Debug from 'debug';
 import {SparqlEndpointFetcher} from 'fetch-sparql-endpoint';
+import {stdout} from 'node:process';
 import rdfSerializer from 'rdf-serialize';
 import pTimeout from 'p-timeout';
 import type {QueryLoader} from './query-loader';
-import stringifyStream from 'stream-to-string';
 
 export interface RunOptions {
   queryLoader: QueryLoader;
@@ -46,15 +46,20 @@ export class SparqlEndpointAnalyzer {
         unresolvedQuadstream,
         timeoutInSeconds * 1000 // Timeout in milliseconds
       );
-      const textStream = rdfSerializer.serialize(quadStream, {
+      const stream = rdfSerializer.serialize(quadStream, {
         contentType: 'application/n-triples',
       });
-      const triples = await stringifyStream(textStream);
-      process.stdout.write(triples);
+
+      // Cannot use Node's "await pipeline()": it swallows errors and fails silently
+      return new Promise((resolve, reject) => {
+        stream.on('data', data => stdout.write(data));
+        stream.on('end', () => resolve());
+        stream.on('error', err => reject(err));
+      });
     } catch (err) {
       const error = err as Error;
       this.debug(
-        `Failed to analyze SPARQL endpoint "${options.endpointUrl}": ${error.message}`
+        `Failed to analyze dataset "${options.datasetUri}" in endpoint "${options.endpointUrl}": ${error.message}`
       );
     }
   }
