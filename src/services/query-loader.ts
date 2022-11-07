@@ -3,7 +3,7 @@ import Handlebars from 'handlebars';
 import {readFile} from 'node:fs/promises';
 import {resolve} from 'node:path';
 
-export interface LoadOptions {
+export interface GetOptions {
   file: string;
   datasetUri: string;
   graphUri?: string;
@@ -49,7 +49,7 @@ export class QueryLoader {
     return query;
   }
 
-  async get(options: LoadOptions): Promise<string> {
+  async get(options: GetOptions): Promise<string> {
     const file = resolve(options.file);
 
     let compiledQueryTemplate = this.cache.get(file);
