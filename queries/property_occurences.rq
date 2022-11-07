@@ -1,8 +1,13 @@
 PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-# list classes and their occurences in the dataset
+# Some prefixes are used only in the subject filter (see catalog definitions)
+PREFIX schema: <http://schema.org/>
+
+# list properties and their occurences 
 CONSTRUCT {
     {{&dataset-uri}} a void:Dataset;
+    rdfs:label ?label ;
     void:classPartition [
         void:class ?property;
         void:entities ?total;
@@ -12,8 +17,9 @@ WHERE {
     {{&graph-open}}
     SELECT (COUNT(?property) as ?total) ?property {
         ?subject ?property ?object .
+        BIND(CONCAT("totals for property ", STR(?type)) as ?label)
         {{&subject-filter}}
     }
-    GROUP BY ?property
+    GROUP BY ?property ?label
     {{&graph-close}}
 }

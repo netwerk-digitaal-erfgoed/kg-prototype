@@ -140,25 +140,25 @@ PREFIX nde: <https://www.netwerkdigitaalerfgoed.nl/def#>
 	dcat:distribution [
 	dcat:accessURL <https://api.druid.datalegend.net/datasets/AdamNet/Heritage/services/Heritage/sparql> ] .
 
-<https://data.labs.kadaster.nl/kadaster/bag/lv> a dcat:Dataset ;
-	dcat:distribution [
-	dcat:accessURL <https://data.labs.kadaster.nl/bag/lv/sparql/default> ] .
+#<https://data.labs.kadaster.nl/kadaster/bag/lv> a dcat:Dataset ;
+#	dcat:distribution [
+#	dcat:accessURL <https://data.labs.kadaster.nl/bag/lv/sparql/default> ] .
 
-<https://data.labs.kadaster.nl/kadaster/bgt> a dcat:Dataset ;
-	dcat:distribution [
-	dcat:accessURL <https://api.labs.kadaster.nl/datasets/kadaster/bgt/services/bgt/sparql> ] .
+#<https://data.labs.kadaster.nl/kadaster/bgt> a dcat:Dataset ;
+#	dcat:distribution [
+#	dcat:accessURL <https://api.labs.kadaster.nl/datasets/kadaster/bgt/services/bgt/sparql> ] .
 
-<https://data.labs.kadaster.nl/kadaster/brt-2> a dcat:Dataset ;
-	dcat:distribution [
-	dcat:accessURL <https://api.labs.kadaster.nl/datasets/kadaster/brt-2/services/brt/sparql> ] .
+#<https://data.labs.kadaster.nl/kadaster/brt-2> a dcat:Dataset ;
+#	dcat:distribution [
+#	dcat:accessURL <https://api.labs.kadaster.nl/datasets/kadaster/brt-2/services/brt/sparql> ] .
 
-<https://data.labs.kadaster.nl/kadaster/kg> a dcat:Dataset ;
-	dcat:distribution [
-	dcat:accessURL <https://api.labs.kadaster.nl/datasets/kadaster/kg/services/default/sparql> ] .
+#<https://data.labs.kadaster.nl/kadaster/kg> a dcat:Dataset ;
+#	dcat:distribution [
+#	dcat:accessURL <https://api.labs.kadaster.nl/datasets/kadaster/kg/services/default/sparql> ] .
 
-<https://data.labs.kadaster.nl/kadaster/wbk> a dcat:Dataset ;
-	dcat:distribution [
-	dcat:accessURL <https://api.labs.kadaster.nl/datasets/kadaster/wbk/services/cbs-linkset/sparql> ] .
+#<https://data.labs.kadaster.nl/kadaster/wbk> a dcat:Dataset ;
+#	dcat:distribution [
+#	dcat:accessURL <https://api.labs.kadaster.nl/datasets/kadaster/wbk/services/cbs-linkset/sparql> ] .
 
 <http://data.bibliotheken.nl/id/dataset/dbnla> a dcat:Dataset ;
 	dcat:distribution [
@@ -214,9 +214,9 @@ PREFIX nde: <https://www.netwerkdigitaalerfgoed.nl/def#>
 	dcat:distribution [
 	dcat:accessURL <https://data.niod.nl/PoolParty/sparql/WO2_Thesaurus> ].
 
-<https://linkeddata.cultureelerfgoed.nl/> a dcat:Dataset ;
-	dcat:distribution [
-	dcat:accessURL <https://linkeddata.cultureelerfgoed.nl/sparql> ].
+#<https://linkeddata.cultureelerfgoed.nl/> a dcat:Dataset ;
+#	dcat:distribution [
+#	dcat:accessURL <https://linkeddata.cultureelerfgoed.nl/sparql> ].
 
 <https://data.netwerkdigitaalerfgoed.nl/hackalod/gvn/ubl> a dcat:Dataset ;
 	dcat:distribution [

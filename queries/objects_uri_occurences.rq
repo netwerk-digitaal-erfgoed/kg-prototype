@@ -1,9 +1,15 @@
 PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX nde: <https://www.netwerkdigitaalerfgoed.nl/def#>
+
+# Some prefixes are used only in the subject filter (see catalog definitions)
+PREFIX schema: <http://schema.org/>
 
 # count objects with URI as value
 CONSTRUCT {
     {{&dataset-uri}} a void:Dataset;
-    void:distinctObjects ?total .
+    rdfs:label "number of objects with a URI as value" ;
+    nde:distinctObjectsURI ?total .
 }
 WHERE {
     {{&graph-open}}

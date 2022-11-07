@@ -1,8 +1,13 @@
 PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+# Some prefixes are used only in the subject filter (see catalog definitions)
+PREFIX schema: <http://schema.org/>
 
 # count unique properties
 CONSTRUCT {
     {{&dataset-uri}} a void:Dataset;
+    rdfs:label "total number of distinct properties" ;
     void:properties ?total .
 }
 WHERE {
