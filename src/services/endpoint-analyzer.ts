@@ -38,23 +38,23 @@ export class SparqlEndpointAnalyzer {
     const fetcher = new SparqlEndpointFetcher();
 
     try {
-      const unresolvedQuadstream = fetcher.fetchTriples(
+      const unresolvedTriplesStream = fetcher.fetchTriples(
         options.endpointUrl,
         query
       );
-      const quadStream = await pTimeout(
-        unresolvedQuadstream,
+      const triplesStream = await pTimeout(
+        unresolvedTriplesStream,
         timeoutInSeconds * 1000 // Timeout in milliseconds
       );
-      const stream = rdfSerializer.serialize(quadStream, {
+      const textStream = rdfSerializer.serialize(triplesStream, {
         contentType: 'application/n-triples',
       });
 
       // Cannot use Node's "await pipeline()": it swallows errors and fails silently
       return new Promise((resolve, reject) => {
-        stream.on('data', data => stdout.write(data));
-        stream.on('end', () => resolve());
-        stream.on('error', err => reject(err));
+        textStream.on('data', data => stdout.write(data));
+        textStream.on('end', () => resolve());
+        textStream.on('error', err => reject(err));
       });
     } catch (err) {
       const error = err as Error;
