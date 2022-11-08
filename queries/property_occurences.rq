@@ -7,17 +7,17 @@ PREFIX schema: <http://schema.org/>
 # list properties and their occurences 
 CONSTRUCT {
     {{&dataset-uri}} a void:Dataset;
-    rdfs:label ?label ;
-    void:classPartition [
-        void:class ?property;
+    void:propertyPartition [
+        rdfs:label ?label ;
+        void:property ?property;
         void:entities ?total;
     ] .
 }
 WHERE {
     {{&graph-open}}
-    SELECT (COUNT(?property) as ?total) ?property {
+    SELECT (COUNT(?property) as ?total) ?property ?label {
         ?subject ?property ?object .
-        BIND(CONCAT("totals for property ", STR(?type)) as ?label)
+        BIND(CONCAT("totals for property ", STR(?property)) as ?label)
         {{&subject-filter}}
     }
     GROUP BY ?property ?label
