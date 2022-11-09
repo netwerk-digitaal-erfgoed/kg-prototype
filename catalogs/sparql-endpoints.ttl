@@ -1,11 +1,13 @@
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX schema: <https://schema.org>
 PREFIX nde: <https://www.netwerkdigitaalerfgoed.nl/def#>
+PREFIX dct: <http://purl.org/dc/terms/>
 
 # nde:graphUri
 # nde:subjectFilter
 
 <http://data.muziekschatten.nl/> a dcat:Dataset ;
+	dct:title "Muziekschatten" ;
 	dcat:distribution [
 	dcat:accessURL <http://data.muziekschatten.nl/sparql> ] .
 
@@ -14,6 +16,7 @@ PREFIX nde: <https://www.netwerkdigitaalerfgoed.nl/def#>
 # 	dcat:accessURL <https://api.kleksi.com/apps/thorn/datasets/default/sparql> ] .
 
 <https://www.goudatijdmachine.nl/data/api/items/> a dcat:Dataset ;
+	dct:title "Gouda Timemachine Linked Open Data" ;
 	dcat:distribution [
 	dcat:accessURL <https://www.goudatijdmachine.nl/sparql/repositories/gtm> ] .
 
@@ -30,113 +33,130 @@ PREFIX nde: <https://www.netwerkdigitaalerfgoed.nl/def#>
 # 	dcat:accessURL <https://api.data.muziekweb.nl/datasets/MuziekwebOrganization/Muziekweb/services/Muziekweb/sparql> ] .
 
 <https://lod.uba.uva.nl/UB-UVA/Incunabula/> a dcat:Dataset ;
+	dct:title "Incunabula" ;
 	dcat:distribution [
 	dcat:accessURL <https://api.lod.uba.uva.nl/datasets/UB-UVA/Catalogue/services/virtuoso/sparql> ;
 	nde:graphUri <https://lod.uba.uva.nl/UB-UVA/Incunabula/graphs/default> ] .
 
 <https://lod.uba.uva.nl/UB-UVA/Letters/> a dcat:Dataset ;
+	dct:title "Letters" ;
 	dcat:distribution [
 	dcat:accessURL <https://api.lod.uba.uva.nl/datasets/UB-UVA/Catalogue/services/virtuoso/sparql> ;
 	nde:graphUri <https://lod.uba.uva.nl/UB-UVA/Letters/graphs/default> ] .
 
 <https://lod.uba.uva.nl/UB-UVA/Maps/> a dcat:Dataset ;
+	dct:title "Maps" ;
 	dcat:distribution [
 	dcat:accessURL <https://api.lod.uba.uva.nl/datasets/UB-UVA/Catalogue/services/virtuoso/sparql> ;
 	nde:graphUri <https://lod.uba.uva.nl/UB-UVA/Maps/graphs/default> ] .
 
 <https://lod.uba.uva.nl/UB-UVA/Images/> a dcat:Dataset ;
+    dct:title "Images" ;
 	dcat:distribution [
 	dcat:accessURL <https://api.lod.uba.uva.nl/datasets/UB-UVA/Catalogue/services/virtuoso/sparql> ;
 	nde:graphUri <https://lod.uba.uva.nl/UB-UVA/Images/graphs/default> ] .
 
 <https://lod.uba.uva.nl/UB-UVA/Video/> a dcat:Dataset ;
+	dct:title "Video and Film" ;
 	dcat:distribution [
 	dcat:accessURL <https://api.lod.uba.uva.nl/datasets/UB-UVA/Catalogue/services/virtuoso/sparql> ;
 	nde:graphUri <https://lod.uba.uva.nl/UB-UVA/Video/graphs/default> ] .
 
 <https://lod.uba.uva.nl/UB-UVA/Audio/> a dcat:Dataset ;
+	dct:title "Audio" ;
 	dcat:distribution [
 	dcat:accessURL <https://api.lod.uba.uva.nl/datasets/UB-UVA/Catalogue/services/virtuoso/sparql> ;
 	nde:graphUri <https://lod.uba.uva.nl/UB-UVA/Audio/graphs/default> ] .
 
 <https://lod.uba.uva.nl/UB-UVA/Music/> a dcat:Dataset ;
+	dct:title "Sheet music" ;
 	dcat:distribution [
 	dcat:accessURL <https://api.lod.uba.uva.nl/datasets/UB-UVA/Catalogue/services/virtuoso/sparql> ;
 	nde:graphUri <https://lod.uba.uva.nl/UB-UVA/Music/graphs/default> ] .
 
 <https://lod.uba.uva.nl/UB-UVA/Archaeological-Objects/> a dcat:Dataset ;
+	dct:title "Archaeological objects" ;
 	dcat:distribution [
 	dcat:accessURL <https://api.lod.uba.uva.nl/datasets/UB-UVA/Catalogue/services/virtuoso/sparql> ;
 	nde:graphUri <https://lod.uba.uva.nl/UB-UVA/Archaeological-Objects/graphs/default> ] .
 
 <https://lod.uba.uva.nl/UB-UVA/Objects/> a dcat:Dataset ;
+	dct:title "Other objects" ;
 	dcat:distribution [
 	dcat:accessURL <https://api.lod.uba.uva.nl/datasets/UB-UVA/Catalogue/services/virtuoso/sparql> ;
 	nde:graphUri <https://lod.uba.uva.nl/UB-UVA/Objects/graphs/default> ] .
 
-<https://LIT.hosting.deventit.net/AtlantisPubliek/data/dataset/LOD+Archiefbeschrijvingen> a dcat:Dataset ;
-	dcat:distribution [
-	dcat:accessURL <https://LIT.hosting.deventit.net/AtlantisSparql> ;
-	nde:graphUri <file://hosting.deventit.net/lit/nosync/Opendata/LOD/RDF/catalog.rdf> ] .
+#<https://LIT.hosting.deventit.net/AtlantisPubliek/data/dataset/LOD+Archiefbeschrijvingen> a dcat:Dataset ;
+#	dcat:distribution [
+#	dcat:accessURL <https://LIT.hosting.deventit.net/AtlantisSparql> ;
+#	nde:graphUri <file://hosting.deventit.net/lit/nosync/Opendata/LOD/RDF/catalog.rdf> ] .
 
-<https://LIT.hosting.deventit.net/AtlantisPubliek/data/dataset/LOD+Museale+Objecten> a dcat:Dataset ;
-	dcat:distribution [
-	dcat:accessURL <https://LIT.hosting.deventit.net/AtlantisSparql> ;
-	nde:graphUri <file://hosting.deventit.net/lit/nosync/Opendata/LOD/RDF/LOD%20Museale%20Objecten.rdf> ] .
+#<https://LIT.hosting.deventit.net/AtlantisPubliek/data/dataset/LOD+Museale+Objecten> a dcat:Dataset ;
+#	dcat:distribution [
+#	dcat:accessURL <https://LIT.hosting.deventit.net/AtlantisSparql> ;
+#	nde:graphUri <file://hosting.deventit.net/lit/nosync/Opendata/LOD/RDF/LOD%20Museale%20Objecten.rdf> ] .
 
-<https://LIT.hosting.deventit.net/AtlantisPubliek/data/dataset/LOD+Thesaurus> a dcat:Dataset ;
-	dcat:distribution [
-	dcat:accessURL <https://LIT.hosting.deventit.net/AtlantisSparql> ;
-	nde:graphUri <file://hosting.deventit.net/lit/nosync/Opendata/LOD/RDF/LOD%20Thesaurus.rdf> ] .
+#<https://LIT.hosting.deventit.net/AtlantisPubliek/data/dataset/LOD+Thesaurus> a dcat:Dataset ;
+#	dcat:distribution [
+#	dcat:accessURL <https://LIT.hosting.deventit.net/AtlantisSparql> ;
+#	nde:graphUri <file://hosting.deventit.net/lit/nosync/Opendata/LOD/RDF/LOD%20Thesaurus.rdf> ] .
 
-<https://LIT.hosting.deventit.net/AtlantisPubliek/data/dataset/LOD+Stambestanden> a dcat:Dataset ;
-	dcat:distribution [
-	dcat:accessURL <https://LIT.hosting.deventit.net/AtlantisSparql> ;
-	nde:graphUri <file://hosting.deventit.net/lit/nosync/Opendata/LOD/RDF/LOD%20Stambestanden.rdf> ] .
+#<https://LIT.hosting.deventit.net/AtlantisPubliek/data/dataset/LOD+Stambestanden> a dcat:Dataset ;
+#	dcat:distribution [
+#	dcat:accessURL <https://LIT.hosting.deventit.net/AtlantisSparql> ;
+#	nde:graphUri <file://hosting.deventit.net/lit/nosync/Opendata/LOD/RDF/LOD%20Stambestanden.rdf> ] .
 
-<https://LIT.hosting.deventit.net/AtlantisPubliek/data/dataset/LOD+Archieven> a dcat:Dataset ;
-	dcat:distribution [
-	dcat:accessURL <https://LIT.hosting.deventit.net/AtlantisSparql> ;
-	nde:graphUri <file://hosting.deventit.net/lit/nosync/Opendata/LOD/RDF/LOD%20Archieven.rdf> ] .
+#<https://LIT.hosting.deventit.net/AtlantisPubliek/data/dataset/LOD+Archieven> a dcat:Dataset ;
+#	dcat:distribution [
+#	dcat:accessURL <https://LIT.hosting.deventit.net/AtlantisSparql> ;
+#	nde:graphUri <file://hosting.deventit.net/lit/nosync/Opendata/LOD/RDF/LOD%20Archieven.rdf> ] .
 
-<https://LIT.hosting.deventit.net/AtlantisPubliek/data/dataset/LOD+Persoon+en+Organisatie> a dcat:Dataset ;
-	dcat:distribution [
-	dcat:accessURL <https://LIT.hosting.deventit.net/AtlantisSparql> ;
-	nde:graphUri <file://hosting.deventit.net/lit/nosync/Opendata/LOD/RDF/LOD%20Persoon%20en%20Organisatie.rdf> ] .
+#<https://LIT.hosting.deventit.net/AtlantisPubliek/data/dataset/LOD+Persoon+en+Organisatie> a dcat:Dataset ;
+#	dcat:distribution [
+#	nde:graphUri <file://hosting.deventit.net/lit/nosync/Opendata/LOD/RDF/LOD%20Persoon%20en%20Organisatie.rdf> ] .
 
 <https://data.netwerkdigitaalerfgoed.nl/hackalod/gvn/kit> a dcat:Dataset ;
+	dct:title "Koloniale wereldtentoonstellingen" ;
 	dcat:distribution [
 	dcat:accessURL <https://api.data.netwerkdigitaalerfgoed.nl/datasets/HackaLOD/GVN/services/GVN/sparql> ] .
 
 <https://data.netwerkdigitaalerfgoed.nl/hackalod/gvn/kitlv> a dcat:Dataset ;
+	dct:title "Nederlands-Indië in foto’s" ;
 	dcat:distribution [
 	dcat:accessURL <https://api.data.netwerkdigitaalerfgoed.nl/datasets/HackaLOD/GVN/services/GVN/sparql> ] .
 
 <https://data.netwerkdigitaalerfgoed.nl/hackalod/gvn/pkl> a dcat:Dataset ;
+	dct:title "	Pioniersfotografie uit Nederlands-Indië" ;
 	dcat:distribution [
 	dcat:accessURL <https://api.data.netwerkdigitaalerfgoed.nl/datasets/HackaLOD/GVN/services/GVN/sparql> ] .
 
 <https://druid.datalegend.net/IISG/iisg-kg> a dcat:Dataset ;
+	dct:title "IISH knowledge graph (IISG - KG)" ;
 	dcat:distribution [
 	dcat:accessURL <https://api.druid.datalegend.net/datasets/IISG/iisg-kg/services/iisg-kg/sparql> ] .
 
 <https://druid.datalegend.net/nlgis/gemeentegeschiedenis> a dcat:Dataset ;
+	dct:title "Dutch Municipalities through Time: gemeentegeschiedenis" ;
 	dcat:distribution [
 	dcat:accessURL <https://api.druid.datalegend.net/datasets/nlgis/gemeentegeschiedenis/services/gemeentegeschiedenis/sparql> ] .
 
 <https://digitaalerfgoed.poolparty.biz/PoolParty/wiki/term/id/cht> a dcat:Dataset ;
+	dct:title "Cultuurhistorische Thesaurus" ;
 	dcat:distribution [
 	dcat:accessURL <https://digitaalerfgoed.poolparty.biz/PoolParty/sparql/term/id/cht> ] .
 
 <https://data.netwerkdigitaalerfgoed.nl/Rijksmuseum/collection> a dcat:Dataset ;
+	dct:title "Rijksmuseum Collection" ;
 	dcat:distribution [
 	dcat:accessURL <https://api.data.netwerkdigitaalerfgoed.nl/datasets/Rijksmuseum/collection/services/collection/sparql> ] .
 
 <https://druid.datalegend.net/dataLegend/HDNG> a dcat:Dataset ;
+	dct:title "Historical Database of Dutch Municipalities (HDNG)" ;
 	dcat:distribution [
 	dcat:accessURL <https://api.druid.datalegend.net/datasets/dataLegend/HDNG/services/hdng/sparql> ] .
 
 <https://druid.datalegend.net/AdamNet/Heritage/> a dcat:Dataset ;
+	dct:title "AdamNet Heritage" ;
 	dcat:distribution [
 	dcat:accessURL <https://api.druid.datalegend.net/datasets/AdamNet/Heritage/services/Heritage/sparql> ] .
 
@@ -161,56 +181,67 @@ PREFIX nde: <https://www.netwerkdigitaalerfgoed.nl/def#>
 #	dcat:accessURL <https://api.labs.kadaster.nl/datasets/kadaster/wbk/services/cbs-linkset/sparql> ] .
 
 <http://data.bibliotheken.nl/id/dataset/dbnla> a dcat:Dataset ;
+	dct:title "Thesaurus Auteurs DBNL" ;
 	dcat:distribution [
 	dcat:accessURL <http://data.bibliotheken.nl/sparql> ;
 	nde:subjectFilter "?subject schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/dbnla> ." ].
 
 <http://data.bibliotheken.nl/id/dataset/dbnlt> a dcat:Dataset ;
+	dct:title "Titels DBNL" ;
 	dcat:distribution [
 	dcat:accessURL <http://data.bibliotheken.nl/sparql> ;
 	nde:subjectFilter "?subject schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/dbnlt>" ].
 
 <http://data.bibliotheken.nl/id/dataset/gtt> a dcat:Dataset ;
+	dct:title "Gemeenschappelijke Trefwoordenthesaurus (GTT)" ;
 	dcat:distribution [
 	dcat:accessURL <http://data.bibliotheken.nl/sparql> ;
 	nde:subjectFilter "?subject schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/gtt>" ].
 
 <http://data.bibliotheken.nl/id/dataset/kbcode> a dcat:Dataset ;
+	dct:title "Thesaurus KBcode" ;
 	dcat:distribution [
 	dcat:accessURL <http://data.bibliotheken.nl/sparql> ;
 	nde:subjectFilter "?subject schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/kbcode>" ].
 
 <http://data.bibliotheken.nl/id/dataset/nbt> a dcat:Dataset ;
+	dct:title "	Nederlandse Bibliografie Totaal (NBT)" ;
 	dcat:distribution [
 	dcat:accessURL <http://data.bibliotheken.nl/sparql> ;
 	nde:subjectFilter "{SELECT ?subject {?subject schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/nbt>} LIMIT 1000000}" ].
 
 <http://data.bibliotheken.nl/id/dataset/persons> a dcat:Dataset ;
+	dct:title "Personen uit de Nederlandse Thesaurus van Auteursnamen (NTA)" ;
 	dcat:distribution [
 	dcat:accessURL <http://data.bibliotheken.nl/sparql> ;
 	nde:subjectFilter "?subject schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/persons>" ].
 
 <http://data.bibliotheken.nl/id/dataset/rise-centsprenten> a dcat:Dataset ;
+	dct:title "Centsprenten" ;
 	dcat:distribution [
 	dcat:accessURL <http://data.bibliotheken.nl/sparql> ;
 	nde:subjectFilter "?subject schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/rise-centsprenten>" ].
 
 <http://data.bibliotheken.nl/id/dataset/stcn> a dcat:Dataset ;
+	dct:title "Short-Title Catalogue Netherlands (STCN)" ;
 	dcat:distribution [
 	dcat:accessURL <http://data.bibliotheken.nl/sparql> ;
 	nde:subjectFilter "?subject schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/stcn>" ].
 
 <http://data.bibliotheken.nl/id/dataset/brinkman> a dcat:Dataset ;
+	dct:title "Brinkman trefwoordenthesaurus" ;
 	dcat:distribution [
 	dcat:accessURL <http://data.bibliotheken.nl/sparql> ;
 	nde:subjectFilter "?subject schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/brinkman>" ].
 
 <http://data.bibliotheken.nl/id/dataset/corps> a dcat:Dataset ;
+	dct:title "Organisaties uit de corporatiethesaurus van de Koninklijke Bibliotheek" ;
 	dcat:distribution [
 	dcat:accessURL <http://data.bibliotheken.nl/sparql> ;
 	nde:subjectFilter "?subject schema:mainEntityOfPage/schema:isPartOf <http://data.bibliotheken.nl/id/dataset/corps>" ].
 
 <https://data.niod.nl/PoolParty/wiki/WO2_Thesaurus> a dcat:Dataset ;
+	dct:title "Thesaurus Tweede Wereldoorlog Nederland, Nederlanders, Nederlands-Indië (WO2 thesaurus)" ;
 	dcat:distribution [
 	dcat:accessURL <https://data.niod.nl/PoolParty/sparql/WO2_Thesaurus> ].
 
@@ -219,13 +250,16 @@ PREFIX nde: <https://www.netwerkdigitaalerfgoed.nl/def#>
 #	dcat:accessURL <https://linkeddata.cultureelerfgoed.nl/sparql> ].
 
 <https://data.netwerkdigitaalerfgoed.nl/hackalod/gvn/ubl> a dcat:Dataset ;
+	dct:title "Topografie van Nederland" ;
 	dcat:distribution [
 	dcat:accessURL <https://api.data.netwerkdigitaalerfgoed.nl/datasets/HackaLOD/GVN/services/GVN/sparql> ].
 
 <https://data.netwerkdigitaalerfgoed.nl/NMVW/collectie> a dcat:Dataset ;
+	dct:title "Thesaurus van het Nationaal Museum van Wereldculturen" ;
 	dcat:distribution [
 	dcat:accessURL <https://api.data.netwerkdigitaalerfgoed.nl/datasets/NMVW/thesaurus/services/thesaurus/sparql> ].
 
 <https://data.netwerkdigitaalerfgoed.nl/hetutrechtsarchief/Dataset> a dcat:Dataset ;
+	dct:title "Collectie Het Utrechts Archief" ;
 	dcat:distribution [
 	dcat:accessURL <https://api.data.netwerkdigitaalerfgoed.nl/datasets/hetutrechtsarchief/Dataset/services/Dataset/sparql> ].
